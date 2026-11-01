@@ -1,0 +1,57 @@
+# 虚拟环境与依赖
+.venv/
+env/
+venv/
+
+# 字节码与 Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 构建与打包分发产物
+*.egg-info/
+build/
+dist/
+*.egg
+*.whl
+*.zip
+*.tar.gz
+
+# 敏感配置与本地环境变量
+.env*
+
+# 操作系统与 IDE 配置
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 临时文件与日志
+*.log
+tmp/
+
+# =============================================================
+# 截图 5 项最终提交材料之外的内容
+# 保留核心：
+# 1. 源码与测试 (guarded_harness/, tests/)
+# 2. pytest -q 实际结果 (evidence/pytest-result.txt)
+# 3. 完整运行记录与产物 (evidence/real-test-fix/)
+# 4. 审计记录 (evidence/real-test-fix/run/audit.jsonl)
+# 5. Checkpoint 恢复记录 (evidence/Checkpoint恢复记录.md)
+# =============================================================
+/docs/
+/examples/
+/scripts/
+SHA256SUMS.txt
+
+# 排除多余的非必选实验与辅助报告
+/evidence/fake-code-understanding/
+/evidence/fake-test-fix/
+/evidence/crash-recovery/
+/evidence/evidence-verification.json
+/evidence/验收报告.md

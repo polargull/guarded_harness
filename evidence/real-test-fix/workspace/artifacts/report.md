@@ -1,0 +1,57 @@
+# 修复报告：calculator.add 错误
+
+## 1. 问题复现
+
+读取 `src/calculator.py` 与 `tests/test_calculator.py` 后，运行 `pytest` 复现失败：
+
+```
+FF.                                                                      [100%]
+____________________________ test_positive_numbers _____________________________
+>       assert add(2, 3) == 5
+E       assert -1 == 5
+E        +  where -1 = add(2, 3)
+____________________________ test_negative_numbers _____________________________
+>       assert add(-2, -3) == -5
+E       assert 1 == -5
+E        +  where 1 = add(-2, -3)
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::test_positive_numbers - assert -1 == 5
+FAILED tests/test_calculator.py::test_negative_numbers - assert 1 == -5
+2 failed, 1 passed in 0.01s
+```
+
+## 2. 根因
+
+`src/calculator.py` 中 `add` 的实现运算符写错，使用了减法：
+
+```python
+def add(a, b):
+    """返回两个数的和。"""
+    return a - b
+```
+
+因此 `add(2, 3)` 返回 `-1`，`add(-2, -3)` 返回 `1`。
+`test_zero`（`add(7, 0) == 7`）恰好因为减 0 不变而通过，掩盖了该缺陷。
+
+## 3. 修改
+
+仅修改 `src/calculator.py`，将 `-` 改为 `+`：
+
+```python
+def add(a, b):
+    """返回两个数的和。"""
+    return a + b
+```
+
+未修改任何测试文件或测试配置。
+
+## 4. 修改后测试结果
+
+运行 `pytest`（完整测试集）：
+
+```
+...                                                                      [100%]
+3 passed in 0.00s
+```
+
+exit_code = 0，全部 3 个测试通过。

@@ -1,0 +1,66 @@
+{
+  "provider": "deepseek",
+  "model_id": "deepseek-chat",
+  "started_at_utc": "2026-11-01T08:35:13.200400+00:00",
+  "processes": [
+    {
+      "pid": 21422,
+      "run_id": "fa4b2edddfde4dd587dde9a1beaf2e73",
+      "status": "WAITING_APPROVAL",
+      "stop_reason": null,
+      "rounds": 9,
+      "tool_calls": 9,
+      "handler_calls": 7,
+      "tokens": 22535,
+      "pending": [
+        "call_00_VaWQdyMfkv8JeKosVtpn1265"
+      ]
+    },
+    {
+      "pid": 21511,
+      "run_id": "fa4b2edddfde4dd587dde9a1beaf2e73",
+      "status": "WAITING_APPROVAL",
+      "stop_reason": null,
+      "rounds": 11,
+      "tool_calls": 12,
+      "handler_calls": 9,
+      "tokens": 30302,
+      "pending": [
+        "call_00_3frQWm2zglqahLqJsVS98210"
+      ]
+    },
+    {
+      "pid": 21531,
+      "run_id": "fa4b2edddfde4dd587dde9a1beaf2e73",
+      "status": "COMPLETED",
+      "stop_reason": "ACCEPTED",
+      "rounds": 13,
+      "tool_calls": 15,
+      "handler_calls": 12,
+      "tokens": 39589,
+      "pending": []
+    }
+  ],
+  "distinct_worker_pids": [
+    21422,
+    21511,
+    21531
+  ],
+  "write_execution_ids": [
+    "call_00_VaWQdyMfkv8JeKosVtpn1265",
+    "call_00_3frQWm2zglqahLqJsVS98210"
+  ],
+  "writes_executed_once": true,
+  "audit_chain_valid": true,
+  "final": {
+    "pid": 21415,
+    "run_id": "fa4b2edddfde4dd587dde9a1beaf2e73",
+    "status": "COMPLETED",
+    "stop_reason": "ACCEPTED",
+    "rounds": 13,
+    "tool_calls": 15,
+    "handler_calls": 12,
+    "tokens": 39589,
+    "pending": []
+  }
+}

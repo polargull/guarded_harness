@@ -1,0 +1,1 @@
+{"pid": 21531, "run_id": "fa4b2edddfde4dd587dde9a1beaf2e73", "status": "COMPLETED", "stop_reason": "ACCEPTED", "rounds": 13, "tool_calls": 15, "handler_calls": 12, "tokens": 39589, "pending": []}

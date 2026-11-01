@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guarded-coding-harness"
+version = "1.0.0"
+description = "作业三：smolagents 可恢复 Guarded Coding Harness"
+requires-python = ">=3.11"
+dependencies = ["smolagents[openai]==1.24.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+guarded-harness = "guarded_harness.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["guarded_harness*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers"
